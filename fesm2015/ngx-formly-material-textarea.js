@@ -1,13 +1,15 @@
-import { __decorate, __metadata } from 'tslib';
-import { ViewChild, Component, ChangeDetectionStrategy, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormlyModule } from '@ngx-formly/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { FieldType, FormlyMatFormFieldModule } from '@ngx-formly/material/form-field';
+import { Component, ViewChild, NgModule } from '@angular/core';
 import { MatInput, MAT_INPUT_VALUE_ACCESSOR, MatInputModule } from '@angular/material/input';
+import { FieldType, FormlyMatFormFieldModule } from '@ngx-formly/material/form-field';
 
-var FormlyFieldTextArea_1;
-let FormlyFieldTextArea = FormlyFieldTextArea_1 = class FormlyFieldTextArea extends FieldType {
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+class FormlyFieldTextArea extends FieldType {
     constructor() {
         super(...arguments);
         this.defaultOptions = {
@@ -17,17 +19,12 @@ let FormlyFieldTextArea = FormlyFieldTextArea_1 = class FormlyFieldTextArea exte
             },
         };
     }
-};
-__decorate([
-    ViewChild(MatInput, { static: true }),
-    __metadata("design:type", MatInput)
-], FormlyFieldTextArea.prototype, "formFieldControl", void 0);
-FormlyFieldTextArea = FormlyFieldTextArea_1 = __decorate([
-    Component({
-        selector: 'formly-field-mat-textarea',
-        template: `
-    <textarea
-      matInput
+}
+FormlyFieldTextArea.decorators = [
+    { type: Component, args: [{
+                selector: 'formly-field-mat-textarea',
+                template: `
+    <textarea matInput
       [id]="id"
       [readonly]="to.readonly"
       [required]="to.required"
@@ -42,44 +39,57 @@ FormlyFieldTextArea = FormlyFieldTextArea_1 = __decorate([
       [cdkAutosizeMinRows]="to.autosizeMinRows"
       [cdkAutosizeMaxRows]="to.autosizeMaxRows"
       [class.cdk-textarea-autosize]="to.autosize"
-    >
+      >
     </textarea>
   `,
-        providers: [
-            // fix for https://github.com/ngx-formly/ngx-formly/issues/1688
-            // rely on formControl value instead of elementRef which return empty value in Firefox.
-            { provide: MAT_INPUT_VALUE_ACCESSOR, useExisting: FormlyFieldTextArea_1 },
-        ],
-        changeDetection: ChangeDetectionStrategy.OnPush
-    })
-], FormlyFieldTextArea);
-
-let FormlyMatTextAreaModule = class FormlyMatTextAreaModule {
+                providers: [
+                    // fix for https://github.com/ngx-formly/ngx-formly/issues/1688
+                    // rely on formControl value instead of elementRef which return empty value in Firefox.
+                    { provide: MAT_INPUT_VALUE_ACCESSOR, useExisting: FormlyFieldTextArea },
+                ]
+            }] }
+];
+FormlyFieldTextArea.propDecorators = {
+    formFieldControl: [{ type: ViewChild, args: [MatInput, (/** @type {?} */ ({ static: true })),] }]
 };
-FormlyMatTextAreaModule = __decorate([
-    NgModule({
-        declarations: [FormlyFieldTextArea],
-        imports: [
-            CommonModule,
-            ReactiveFormsModule,
-            MatInputModule,
-            FormlyMatFormFieldModule,
-            FormlyModule.forChild({
-                types: [
-                    {
-                        name: 'textarea',
-                        component: FormlyFieldTextArea,
-                        wrappers: ['form-field'],
-                    },
-                ],
-            }),
-        ],
-    })
-], FormlyMatTextAreaModule);
 
 /**
- * Generated bundle index. Do not edit.
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+class FormlyMatTextAreaModule {
+}
+FormlyMatTextAreaModule.decorators = [
+    { type: NgModule, args: [{
+                declarations: [FormlyFieldTextArea],
+                imports: [
+                    CommonModule,
+                    ReactiveFormsModule,
+                    MatInputModule,
+                    FormlyMatFormFieldModule,
+                    FormlyModule.forChild({
+                        types: [
+                            {
+                                name: 'textarea',
+                                component: FormlyFieldTextArea,
+                                wrappers: ['form-field'],
+                            },
+                        ],
+                    }),
+                ],
+            },] }
+];
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
-export { FormlyFieldTextArea, FormlyMatTextAreaModule };
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+
+export { FormlyMatTextAreaModule, FormlyFieldTextArea };
+
 //# sourceMappingURL=ngx-formly-material-textarea.js.map

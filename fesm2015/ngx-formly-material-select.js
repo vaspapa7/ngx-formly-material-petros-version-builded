@@ -1,40 +1,68 @@
-import { __decorate, __metadata } from 'tslib';
-import { ViewChild, Component, ChangeDetectionStrategy, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormlyModule } from '@ngx-formly/core';
 import { FormlySelectModule } from '@ngx-formly/core/select';
-import { FieldType, FormlyMatFormFieldModule } from '@ngx-formly/material/form-field';
+import { Component, ViewChild, NgModule } from '@angular/core';
 import { MatSelect, MatSelectModule } from '@angular/material/select';
+import { FieldType, FormlyMatFormFieldModule } from '@ngx-formly/material/form-field';
 import { MatPseudoCheckboxModule } from '@angular/material/core';
 
-let FormlyFieldSelect = class FormlyFieldSelect extends FieldType {
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+class FormlyFieldSelect extends FieldType {
     constructor() {
         super(...arguments);
         this.defaultOptions = {
             templateOptions: {
                 options: [],
+                /**
+                 * @param {?} o1
+                 * @param {?} o2
+                 * @return {?}
+                 */
                 compareWith(o1, o2) {
                     return o1 === o2;
                 },
             },
         };
     }
+    /**
+     * @param {?} options
+     * @return {?}
+     */
     getSelectAllState(options) {
         if (this.empty || this.value.length === 0) {
             return '';
         }
-        return this.value.length !== this.getSelectAllValue(options).length ? 'indeterminate' : 'checked';
+        return this.value.length !== this.getSelectAllValue(options).length
+            ? 'indeterminate'
+            : 'checked';
     }
+    /**
+     * @param {?} options
+     * @return {?}
+     */
     toggleSelectAll(options) {
+        /** @type {?} */
         const selectAllValue = this.getSelectAllValue(options);
-        this.formControl.setValue(!this.value || this.value.length !== selectAllValue.length ? selectAllValue : []);
+        this.formControl.setValue(!this.value || this.value.length !== selectAllValue.length
+            ? selectAllValue
+            : []);
     }
+    /**
+     * @param {?} $event
+     * @return {?}
+     */
     change($event) {
         if (this.to.change) {
             this.to.change(this.field, $event);
         }
     }
+    /**
+     * @return {?}
+     */
     _getAriaLabelledby() {
         if (this.to.attributes && this.to.attributes['aria-labelledby']) {
             return this.to.attributes['aria-labelledby'];
@@ -44,36 +72,48 @@ let FormlyFieldSelect = class FormlyFieldSelect extends FieldType {
         }
         return null;
     }
+    /**
+     * @private
+     * @param {?} options
+     * @return {?}
+     */
     getSelectAllValue(options) {
         if (!this.selectAllValue || options !== this.selectAllValue.options) {
+            /** @type {?} */
             const flatOptions = [];
-            options.forEach((o) => (o.group ? flatOptions.push(...o.group) : flatOptions.push(o)));
+            options.forEach((/**
+             * @param {?} o
+             * @return {?}
+             */
+            o => o.group
+                ? flatOptions.push(...o.group)
+                : flatOptions.push(o)));
             this.selectAllValue = {
                 options,
-                value: flatOptions.map((o) => o.value),
+                value: flatOptions.map((/**
+                 * @param {?} o
+                 * @return {?}
+                 */
+                o => o.value)),
             };
         }
         return this.selectAllValue.value;
     }
-};
-__decorate([
-    ViewChild(MatSelect, { static: true }),
-    __metadata("design:type", MatSelect)
-], FormlyFieldSelect.prototype, "formFieldControl", void 0);
-FormlyFieldSelect = __decorate([
-    Component({
-        selector: 'formly-field-mat-select',
-        template: `
+}
+FormlyFieldSelect.decorators = [
+    { type: Component, args: [{
+                selector: 'formly-field-mat-select',
+                template: `
     <ng-template #selectAll let-selectOptions="selectOptions">
       <mat-option (click)="toggleSelectAll(selectOptions)">
-        <mat-pseudo-checkbox class="mat-option-pseudo-checkbox" [state]="getSelectAllState(selectOptions)">
+        <mat-pseudo-checkbox class="mat-option-pseudo-checkbox"
+          [state]="getSelectAllState(selectOptions)">
         </mat-pseudo-checkbox>
         {{ to.selectAllOption }}
       </mat-option>
     </ng-template>
 
-    <mat-select
-      [id]="id"
+    <mat-select [id]="id"
       [formControl]="formControl"
       [formlyAttributes]="field"
       [placeholder]="to.placeholder"
@@ -85,13 +125,9 @@ FormlyFieldSelect = __decorate([
       [errorStateMatcher]="errorStateMatcher"
       [aria-labelledby]="_getAriaLabelledby()"
       [disableOptionCentering]="to.disableOptionCentering"
-    >
-      <ng-container *ngIf="to.options | formlySelectOptions: field | async as selectOptions">
-        <ng-container
-          *ngIf="to.multiple && to.selectAllOption"
-          [ngTemplateOutlet]="selectAll"
-          [ngTemplateOutletContext]="{ selectOptions: selectOptions }"
-        >
+      >
+      <ng-container *ngIf="to.options | formlySelectOptions:field | async as selectOptions">
+        <ng-container *ngIf="to.multiple && to.selectAllOption" [ngTemplateOutlet]="selectAll" [ngTemplateOutletContext]="{ selectOptions: selectOptions }">
         </ng-container>
         <ng-container *ngFor="let item of selectOptions">
           <mat-optgroup *ngIf="item.group" [label]="item.label">
@@ -103,40 +139,50 @@ FormlyFieldSelect = __decorate([
         </ng-container>
       </ng-container>
     </mat-select>
-  `,
-        changeDetection: ChangeDetectionStrategy.OnPush
-    })
-], FormlyFieldSelect);
-
-let FormlyMatSelectModule = class FormlyMatSelectModule {
+  `
+            }] }
+];
+FormlyFieldSelect.propDecorators = {
+    formFieldControl: [{ type: ViewChild, args: [MatSelect, (/** @type {?} */ ({ static: true })),] }]
 };
-FormlyMatSelectModule = __decorate([
-    NgModule({
-        declarations: [FormlyFieldSelect],
-        imports: [
-            CommonModule,
-            ReactiveFormsModule,
-            MatSelectModule,
-            MatPseudoCheckboxModule,
-            FormlyMatFormFieldModule,
-            FormlySelectModule,
-            FormlyModule.forChild({
-                types: [
-                    {
-                        name: 'select',
-                        component: FormlyFieldSelect,
-                        wrappers: ['form-field'],
-                    },
-                    { name: 'enum', extends: 'select' },
-                ],
-            }),
-        ],
-    })
-], FormlyMatSelectModule);
 
 /**
- * Generated bundle index. Do not edit.
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+class FormlyMatSelectModule {
+}
+FormlyMatSelectModule.decorators = [
+    { type: NgModule, args: [{
+                declarations: [FormlyFieldSelect],
+                imports: [
+                    CommonModule,
+                    ReactiveFormsModule,
+                    MatSelectModule,
+                    MatPseudoCheckboxModule,
+                    FormlyMatFormFieldModule,
+                    FormlySelectModule,
+                    FormlyModule.forChild({
+                        types: [{
+                                name: 'select',
+                                component: FormlyFieldSelect,
+                                wrappers: ['form-field'],
+                            }],
+                    }),
+                ],
+            },] }
+];
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
-export { FormlyFieldSelect, FormlyMatSelectModule };
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+
+export { FormlyMatSelectModule, FormlyFieldSelect };
+
 //# sourceMappingURL=ngx-formly-material-select.js.map

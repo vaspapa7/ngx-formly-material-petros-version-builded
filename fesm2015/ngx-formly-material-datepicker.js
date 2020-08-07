@@ -1,13 +1,16 @@
-import { __decorate, __metadata } from 'tslib';
-import { ViewChild, TemplateRef, Component, ChangeDetectionStrategy, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormlyModule } from '@ngx-formly/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { Component, ViewChild, NgModule } from '@angular/core';
+import { ɵdefineHiddenProp, FormlyModule } from '@ngx-formly/core';
 import { FieldType, FormlyMatFormFieldModule } from '@ngx-formly/material/form-field';
 import { MatInput, MatInputModule } from '@angular/material/input';
 import { MatDatepickerInput, MatDatepickerModule } from '@angular/material/datepicker';
 
-let FormlyDatepickerTypeComponent = class FormlyDatepickerTypeComponent extends FieldType {
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+class FormlyDatepickerTypeComponent extends FieldType {
     constructor() {
         super(...arguments);
         this.defaultOptions = {
@@ -15,39 +18,47 @@ let FormlyDatepickerTypeComponent = class FormlyDatepickerTypeComponent extends 
                 datepickerOptions: {
                     startView: 'month',
                     datepickerTogglePosition: 'suffix',
-                    dateInput: () => { },
-                    dateChange: () => { },
-                    monthSelected: () => { },
-                    yearSelected: () => { },
+                    dateInput: (/**
+                     * @return {?}
+                     */
+                    () => { }),
+                    dateChange: (/**
+                     * @return {?}
+                     */
+                    () => { }),
+                    monthSelected: (/**
+                     * @return {?}
+                     */
+                    () => { }),
+                    yearSelected: (/**
+                     * @return {?}
+                     */
+                    () => { }),
                 },
             },
         };
     }
+    /**
+     * @return {?}
+     */
     ngAfterViewInit() {
         super.ngAfterViewInit();
-        this.to[this.to.datepickerOptions.datepickerTogglePosition] = this.datepickerToggle;
         // temporary fix for https://github.com/angular/material2/issues/6728
-        this.datepickerInput._formField = this.formField;
+        ((/** @type {?} */ (this.datepickerInput)))._formField = this.formField;
+        setTimeout((/**
+         * @return {?}
+         */
+        () => {
+            ɵdefineHiddenProp(this.field, '_mat' + this.to.datepickerOptions.datepickerTogglePosition, this.datepickerToggle);
+            ((/** @type {?} */ (this.options)))._markForCheck(this.field);
+        }));
     }
-};
-__decorate([
-    ViewChild(MatInput, { static: true }),
-    __metadata("design:type", MatInput)
-], FormlyDatepickerTypeComponent.prototype, "formFieldControl", void 0);
-__decorate([
-    ViewChild(MatDatepickerInput, { static: true }),
-    __metadata("design:type", MatDatepickerInput)
-], FormlyDatepickerTypeComponent.prototype, "datepickerInput", void 0);
-__decorate([
-    ViewChild('datepickerToggle', { static: true }),
-    __metadata("design:type", TemplateRef)
-], FormlyDatepickerTypeComponent.prototype, "datepickerToggle", void 0);
-FormlyDatepickerTypeComponent = __decorate([
-    Component({
-        selector: 'formly-field-mat-datepicker',
-        template: `
-    <input
-      matInput
+}
+FormlyDatepickerTypeComponent.decorators = [
+    { type: Component, args: [{
+                selector: 'formly-field-mat-datepicker',
+                template: `
+    <input matInput
       [id]="id"
       [errorStateMatcher]="errorStateMatcher"
       [formControl]="formControl"
@@ -61,13 +72,11 @@ FormlyDatepickerTypeComponent = __decorate([
       [readonly]="to.readonly"
       [required]="to.required"
       (dateInput)="to.datepickerOptions.dateInput(field, $event)"
-      (dateChange)="to.datepickerOptions.dateChange(field, $event)"
-    />
+      (dateChange)="to.datepickerOptions.dateChange(field, $event)">
     <ng-template #datepickerToggle>
       <mat-datepicker-toggle [for]="picker"></mat-datepicker-toggle>
     </ng-template>
-    <mat-datepicker
-      #picker
+    <mat-datepicker #picker
       [color]="to.color"
       [dateClass]="to.datepickerOptions.dateClass"
       [disabled]="to.datepickerOptions.disabled"
@@ -80,38 +89,51 @@ FormlyDatepickerTypeComponent = __decorate([
       (yearSelected)="to.datepickerOptions.yearSelected(field, $event, picker)"
     >
     </mat-datepicker>
-  `,
-        changeDetection: ChangeDetectionStrategy.OnPush
-    })
-], FormlyDatepickerTypeComponent);
-
-let FormlyMatDatepickerModule = class FormlyMatDatepickerModule {
+  `
+            }] }
+];
+FormlyDatepickerTypeComponent.propDecorators = {
+    formFieldControl: [{ type: ViewChild, args: [MatInput, (/** @type {?} */ ({ static: true })),] }],
+    datepickerInput: [{ type: ViewChild, args: [MatDatepickerInput,] }],
+    datepickerToggle: [{ type: ViewChild, args: ['datepickerToggle',] }]
 };
-FormlyMatDatepickerModule = __decorate([
-    NgModule({
-        declarations: [FormlyDatepickerTypeComponent],
-        imports: [
-            CommonModule,
-            ReactiveFormsModule,
-            MatInputModule,
-            MatDatepickerModule,
-            FormlyMatFormFieldModule,
-            FormlyModule.forChild({
-                types: [
-                    {
-                        name: 'datepicker',
-                        component: FormlyDatepickerTypeComponent,
-                        wrappers: ['form-field'],
-                    },
-                ],
-            }),
-        ],
-    })
-], FormlyMatDatepickerModule);
 
 /**
- * Generated bundle index. Do not edit.
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+class FormlyMatDatepickerModule {
+}
+FormlyMatDatepickerModule.decorators = [
+    { type: NgModule, args: [{
+                declarations: [FormlyDatepickerTypeComponent],
+                imports: [
+                    CommonModule,
+                    ReactiveFormsModule,
+                    MatInputModule,
+                    MatDatepickerModule,
+                    FormlyMatFormFieldModule,
+                    FormlyModule.forChild({
+                        types: [{
+                                name: 'datepicker',
+                                component: FormlyDatepickerTypeComponent,
+                                wrappers: ['form-field'],
+                            }],
+                    }),
+                ],
+            },] }
+];
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
 export { FormlyMatDatepickerModule, FormlyDatepickerTypeComponent as ɵa };
+
 //# sourceMappingURL=ngx-formly-material-datepicker.js.map

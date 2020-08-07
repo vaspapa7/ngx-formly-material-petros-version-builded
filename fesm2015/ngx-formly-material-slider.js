@@ -1,12 +1,15 @@
-import { __decorate, __metadata } from 'tslib';
-import { ViewChild, Component, ChangeDetectionStrategy, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormlyModule } from '@ngx-formly/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { MatSlider, MatSliderModule } from '@angular/material/slider';
+import { Component, ViewChild, NgModule } from '@angular/core';
 import { FieldType, FormlyMatFormFieldModule } from '@ngx-formly/material/form-field';
+import { MatSlider, MatSliderModule } from '@angular/material/slider';
 
-let FormlySliderTypeComponent = class FormlySliderTypeComponent extends FieldType {
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+class FormlySliderTypeComponent extends FieldType {
     constructor() {
         super(...arguments);
         this.defaultOptions = {
@@ -17,19 +20,19 @@ let FormlySliderTypeComponent = class FormlySliderTypeComponent extends FieldTyp
             },
         };
     }
+    /**
+     * @param {?} event
+     * @return {?}
+     */
     onContainerClick(event) {
         this.slider.focus();
         super.onContainerClick(event);
     }
-};
-__decorate([
-    ViewChild(MatSlider, { static: true }),
-    __metadata("design:type", MatSlider)
-], FormlySliderTypeComponent.prototype, "slider", void 0);
-FormlySliderTypeComponent = __decorate([
-    Component({
-        selector: 'formly-field-mat-slider',
-        template: `
+}
+FormlySliderTypeComponent.decorators = [
+    { type: Component, args: [{
+                selector: 'formly-field-mat-slider',
+                template: `
     <mat-slider
       [id]="id"
       [style.width]="'100%'"
@@ -40,40 +43,50 @@ FormlySliderTypeComponent = __decorate([
       [thumbLabel]="to.thumbLabel"
       [step]="to.step"
       [max]="to.max"
-      [min]="to.min"
-    >
+      [min]="to.min">
     </mat-slider>
-  `,
-        changeDetection: ChangeDetectionStrategy.OnPush
-    })
-], FormlySliderTypeComponent);
-
-let FormlyMatSliderModule = class FormlyMatSliderModule {
+  `
+            }] }
+];
+FormlySliderTypeComponent.propDecorators = {
+    slider: [{ type: ViewChild, args: [MatSlider,] }]
 };
-FormlyMatSliderModule = __decorate([
-    NgModule({
-        declarations: [FormlySliderTypeComponent],
-        imports: [
-            CommonModule,
-            ReactiveFormsModule,
-            MatSliderModule,
-            FormlyMatFormFieldModule,
-            FormlyModule.forChild({
-                types: [
-                    {
-                        name: 'slider',
-                        component: FormlySliderTypeComponent,
-                        wrappers: ['form-field'],
-                    },
-                ],
-            }),
-        ],
-    })
-], FormlyMatSliderModule);
 
 /**
- * Generated bundle index. Do not edit.
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+class FormlyMatSliderModule {
+}
+FormlyMatSliderModule.decorators = [
+    { type: NgModule, args: [{
+                declarations: [FormlySliderTypeComponent],
+                imports: [
+                    CommonModule,
+                    ReactiveFormsModule,
+                    MatSliderModule,
+                    FormlyMatFormFieldModule,
+                    FormlyModule.forChild({
+                        types: [{
+                                name: 'slider',
+                                component: FormlySliderTypeComponent,
+                                wrappers: ['form-field'],
+                            }],
+                    }),
+                ],
+            },] }
+];
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
 export { FormlyMatSliderModule, FormlySliderTypeComponent as ɵa };
+
 //# sourceMappingURL=ngx-formly-material-slider.js.map

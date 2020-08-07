@@ -1,11 +1,15 @@
-import { __extends, __decorate, __metadata } from 'tslib';
-import { ViewChild, Component, ChangeDetectionStrategy, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormlyModule } from '@ngx-formly/core';
 import { ReactiveFormsModule } from '@angular/forms';
-import { MatSlideToggle, MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { __extends } from 'tslib';
+import { Component, ViewChild, NgModule } from '@angular/core';
 import { FieldType, FormlyMatFormFieldModule } from '@ngx-formly/material/form-field';
+import { MatSlideToggle, MatSlideToggleModule } from '@angular/material/slide-toggle';
 
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
 var FormlyToggleTypeComponent = /** @class */ (function (_super) {
     __extends(FormlyToggleTypeComponent, _super);
     function FormlyToggleTypeComponent() {
@@ -19,53 +23,68 @@ var FormlyToggleTypeComponent = /** @class */ (function (_super) {
         };
         return _this;
     }
-    FormlyToggleTypeComponent.prototype.onContainerClick = function (event) {
+    /**
+     * @param {?} event
+     * @return {?}
+     */
+    FormlyToggleTypeComponent.prototype.onContainerClick = /**
+     * @param {?} event
+     * @return {?}
+     */
+    function (event) {
         this.slideToggle.focus();
         _super.prototype.onContainerClick.call(this, event);
     };
-    __decorate([
-        ViewChild(MatSlideToggle, { static: true }),
-        __metadata("design:type", MatSlideToggle)
-    ], FormlyToggleTypeComponent.prototype, "slideToggle", void 0);
-    FormlyToggleTypeComponent = __decorate([
-        Component({
-            selector: 'formly-field-mat-toggle',
-            template: "\n    <mat-slide-toggle\n      [id]=\"id\"\n      [formControl]=\"formControl\"\n      [formlyAttributes]=\"field\"\n      [color]=\"to.color\"\n      [tabindex]=\"to.tabindex\"\n      [required]=\"to.required\"\n    >\n      {{ to.label }}\n    </mat-slide-toggle>\n  ",
-            changeDetection: ChangeDetectionStrategy.OnPush
-        })
-    ], FormlyToggleTypeComponent);
+    FormlyToggleTypeComponent.decorators = [
+        { type: Component, args: [{
+                    selector: 'formly-field-mat-toggle',
+                    template: "\n    <mat-slide-toggle\n      [id]=\"id\"\n      [formControl]=\"formControl\"\n      [formlyAttributes]=\"field\"\n      [color]=\"to.color\"\n      [tabindex]=\"to.tabindex\"\n      [required]=\"to.required\">\n      {{ to.label }}\n    </mat-slide-toggle>\n  "
+                }] }
+    ];
+    FormlyToggleTypeComponent.propDecorators = {
+        slideToggle: [{ type: ViewChild, args: [MatSlideToggle,] }]
+    };
     return FormlyToggleTypeComponent;
 }(FieldType));
 
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
 var FormlyMatToggleModule = /** @class */ (function () {
     function FormlyMatToggleModule() {
     }
-    FormlyMatToggleModule = __decorate([
-        NgModule({
-            declarations: [FormlyToggleTypeComponent],
-            imports: [
-                CommonModule,
-                ReactiveFormsModule,
-                MatSlideToggleModule,
-                FormlyMatFormFieldModule,
-                FormlyModule.forChild({
-                    types: [
-                        {
-                            name: 'toggle',
-                            component: FormlyToggleTypeComponent,
-                            wrappers: ['form-field'],
-                        },
+    FormlyMatToggleModule.decorators = [
+        { type: NgModule, args: [{
+                    declarations: [FormlyToggleTypeComponent],
+                    imports: [
+                        CommonModule,
+                        ReactiveFormsModule,
+                        MatSlideToggleModule,
+                        FormlyMatFormFieldModule,
+                        FormlyModule.forChild({
+                            types: [{
+                                    name: 'toggle',
+                                    component: FormlyToggleTypeComponent,
+                                    wrappers: ['form-field'],
+                                }],
+                        }),
                     ],
-                }),
-            ],
-        })
-    ], FormlyMatToggleModule);
+                },] }
+    ];
     return FormlyMatToggleModule;
 }());
 
 /**
- * Generated bundle index. Do not edit.
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
 export { FormlyMatToggleModule, FormlyToggleTypeComponent as ɵa };
+
 //# sourceMappingURL=ngx-formly-material-toggle.js.map

@@ -1,10 +1,12 @@
-var FormlyFieldTextArea_1;
-import { __decorate, __metadata } from "tslib";
-import { Component, ChangeDetectionStrategy, ViewChild } from '@angular/core';
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingOverride,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
+import { Component, ViewChild } from '@angular/core';
 import { MatInput } from '@angular/material/input';
 import { FieldType } from '@ngx-formly/material/form-field';
 import { MAT_INPUT_VALUE_ACCESSOR } from '@angular/material/input';
-let FormlyFieldTextArea = FormlyFieldTextArea_1 = class FormlyFieldTextArea extends FieldType {
+export class FormlyFieldTextArea extends FieldType {
     constructor() {
         super(...arguments);
         this.defaultOptions = {
@@ -14,17 +16,12 @@ let FormlyFieldTextArea = FormlyFieldTextArea_1 = class FormlyFieldTextArea exte
             },
         };
     }
-};
-__decorate([
-    ViewChild(MatInput, { static: true }),
-    __metadata("design:type", MatInput)
-], FormlyFieldTextArea.prototype, "formFieldControl", void 0);
-FormlyFieldTextArea = FormlyFieldTextArea_1 = __decorate([
-    Component({
-        selector: 'formly-field-mat-textarea',
-        template: `
-    <textarea
-      matInput
+}
+FormlyFieldTextArea.decorators = [
+    { type: Component, args: [{
+                selector: 'formly-field-mat-textarea',
+                template: `
+    <textarea matInput
       [id]="id"
       [readonly]="to.readonly"
       [required]="to.required"
@@ -39,16 +36,23 @@ FormlyFieldTextArea = FormlyFieldTextArea_1 = __decorate([
       [cdkAutosizeMinRows]="to.autosizeMinRows"
       [cdkAutosizeMaxRows]="to.autosizeMaxRows"
       [class.cdk-textarea-autosize]="to.autosize"
-    >
+      >
     </textarea>
   `,
-        providers: [
-            // fix for https://github.com/ngx-formly/ngx-formly/issues/1688
-            // rely on formControl value instead of elementRef which return empty value in Firefox.
-            { provide: MAT_INPUT_VALUE_ACCESSOR, useExisting: FormlyFieldTextArea_1 },
-        ],
-        changeDetection: ChangeDetectionStrategy.OnPush
-    })
-], FormlyFieldTextArea);
-export { FormlyFieldTextArea };
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidGV4dGFyZWEudHlwZS5qcyIsInNvdXJjZVJvb3QiOiJuZzovL0BuZ3gtZm9ybWx5L21hdGVyaWFsL3RleHRhcmVhLyIsInNvdXJjZXMiOlsidGV4dGFyZWEudHlwZS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOztBQUFBLE9BQU8sRUFBRSxTQUFTLEVBQUUsdUJBQXVCLEVBQVUsU0FBUyxFQUFFLE1BQU0sZUFBZSxDQUFDO0FBQ3RGLE9BQU8sRUFBRSxRQUFRLEVBQUUsTUFBTSx5QkFBeUIsQ0FBQztBQUNuRCxPQUFPLEVBQUUsU0FBUyxFQUFFLE1BQU0saUNBQWlDLENBQUM7QUFDNUQsT0FBTyxFQUFFLHdCQUF3QixFQUFFLE1BQU0seUJBQXlCLENBQUM7QUErQm5FLElBQWEsbUJBQW1CLDJCQUFoQyxNQUFhLG1CQUFvQixTQUFRLFNBQVM7SUFBbEQ7O1FBRUUsbUJBQWMsR0FBRztZQUNmLGVBQWUsRUFBRTtnQkFDZixJQUFJLEVBQUUsQ0FBQztnQkFDUCxJQUFJLEVBQUUsQ0FBQzthQUNSO1NBQ0YsQ0FBQztJQUNKLENBQUM7Q0FBQSxDQUFBO0FBUHdDO0lBQXRDLFNBQVMsQ0FBQyxRQUFRLEVBQUUsRUFBRSxNQUFNLEVBQUUsSUFBSSxFQUFFLENBQUM7OEJBQW9CLFFBQVE7NkRBQUM7QUFEeEQsbUJBQW1CO0lBN0IvQixTQUFTLENBQUM7UUFDVCxRQUFRLEVBQUUsMkJBQTJCO1FBQ3JDLFFBQVEsRUFBRTs7Ozs7Ozs7Ozs7Ozs7Ozs7OztHQW1CVDtRQUNELFNBQVMsRUFBRTtZQUNULCtEQUErRDtZQUMvRCx1RkFBdUY7WUFDdkYsRUFBRSxPQUFPLEVBQUUsd0JBQXdCLEVBQUUsV0FBVyxFQUFFLHFCQUFtQixFQUFFO1NBQ3hFO1FBQ0QsZUFBZSxFQUFFLHVCQUF1QixDQUFDLE1BQU07S0FDaEQsQ0FBQztHQUNXLG1CQUFtQixDQVEvQjtTQVJZLG1CQUFtQiIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IENvbXBvbmVudCwgQ2hhbmdlRGV0ZWN0aW9uU3RyYXRlZ3ksIE9uSW5pdCwgVmlld0NoaWxkIH0gZnJvbSAnQGFuZ3VsYXIvY29yZSc7XG5pbXBvcnQgeyBNYXRJbnB1dCB9IGZyb20gJ0Bhbmd1bGFyL21hdGVyaWFsL2lucHV0JztcbmltcG9ydCB7IEZpZWxkVHlwZSB9IGZyb20gJ0BuZ3gtZm9ybWx5L21hdGVyaWFsL2Zvcm0tZmllbGQnO1xuaW1wb3J0IHsgTUFUX0lOUFVUX1ZBTFVFX0FDQ0VTU09SIH0gZnJvbSAnQGFuZ3VsYXIvbWF0ZXJpYWwvaW5wdXQnO1xuXG5AQ29tcG9uZW50KHtcbiAgc2VsZWN0b3I6ICdmb3JtbHktZmllbGQtbWF0LXRleHRhcmVhJyxcbiAgdGVtcGxhdGU6IGBcbiAgICA8dGV4dGFyZWFcbiAgICAgIG1hdElucHV0XG4gICAgICBbaWRdPVwiaWRcIlxuICAgICAgW3JlYWRvbmx5XT1cInRvLnJlYWRvbmx5XCJcbiAgICAgIFtyZXF1aXJlZF09XCJ0by5yZXF1aXJlZFwiXG4gICAgICBbZm9ybUNvbnRyb2xdPVwiZm9ybUNvbnRyb2xcIlxuICAgICAgW2Vycm9yU3RhdGVNYXRjaGVyXT1cImVycm9yU3RhdGVNYXRjaGVyXCJcbiAgICAgIFtjb2xzXT1cInRvLmNvbHNcIlxuICAgICAgW3Jvd3NdPVwidG8ucm93c1wiXG4gICAgICBbZm9ybWx5QXR0cmlidXRlc109XCJmaWVsZFwiXG4gICAgICBbcGxhY2Vob2xkZXJdPVwidG8ucGxhY2Vob2xkZXJcIlxuICAgICAgW3RhYmluZGV4XT1cInRvLnRhYmluZGV4XCJcbiAgICAgIFtjZGtUZXh0YXJlYUF1dG9zaXplXT1cInRvLmF1dG9zaXplXCJcbiAgICAgIFtjZGtBdXRvc2l6ZU1pblJvd3NdPVwidG8uYXV0b3NpemVNaW5Sb3dzXCJcbiAgICAgIFtjZGtBdXRvc2l6ZU1heFJvd3NdPVwidG8uYXV0b3NpemVNYXhSb3dzXCJcbiAgICAgIFtjbGFzcy5jZGstdGV4dGFyZWEtYXV0b3NpemVdPVwidG8uYXV0b3NpemVcIlxuICAgID5cbiAgICA8L3RleHRhcmVhPlxuICBgLFxuICBwcm92aWRlcnM6IFtcbiAgICAvLyBmaXggZm9yIGh0dHBzOi8vZ2l0aHViLmNvbS9uZ3gtZm9ybWx5L25neC1mb3JtbHkvaXNzdWVzLzE2ODhcbiAgICAvLyByZWx5IG9uIGZvcm1Db250cm9sIHZhbHVlIGluc3RlYWQgb2YgZWxlbWVudFJlZiB3aGljaCByZXR1cm4gZW1wdHkgdmFsdWUgaW4gRmlyZWZveC5cbiAgICB7IHByb3ZpZGU6IE1BVF9JTlBVVF9WQUxVRV9BQ0NFU1NPUiwgdXNlRXhpc3Rpbmc6IEZvcm1seUZpZWxkVGV4dEFyZWEgfSxcbiAgXSxcbiAgY2hhbmdlRGV0ZWN0aW9uOiBDaGFuZ2VEZXRlY3Rpb25TdHJhdGVneS5PblB1c2gsXG59KVxuZXhwb3J0IGNsYXNzIEZvcm1seUZpZWxkVGV4dEFyZWEgZXh0ZW5kcyBGaWVsZFR5cGUgaW1wbGVtZW50cyBPbkluaXQge1xuICBAVmlld0NoaWxkKE1hdElucHV0LCB7IHN0YXRpYzogdHJ1ZSB9KSBmb3JtRmllbGRDb250cm9sITogTWF0SW5wdXQ7XG4gIGRlZmF1bHRPcHRpb25zID0ge1xuICAgIHRlbXBsYXRlT3B0aW9uczoge1xuICAgICAgY29sczogMSxcbiAgICAgIHJvd3M6IDEsXG4gICAgfSxcbiAgfTtcbn1cbiJdfQ==
+                providers: [
+                    // fix for https://github.com/ngx-formly/ngx-formly/issues/1688
+                    // rely on formControl value instead of elementRef which return empty value in Firefox.
+                    { provide: MAT_INPUT_VALUE_ACCESSOR, useExisting: FormlyFieldTextArea },
+                ]
+            }] }
+];
+FormlyFieldTextArea.propDecorators = {
+    formFieldControl: [{ type: ViewChild, args: [MatInput, (/** @type {?} */ ({ static: true })),] }]
+};
+if (false) {
+    /** @type {?} */
+    FormlyFieldTextArea.prototype.formFieldControl;
+    /** @type {?} */
+    FormlyFieldTextArea.prototype.defaultOptions;
+}
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoidGV4dGFyZWEudHlwZS5qcyIsInNvdXJjZVJvb3QiOiJuZzovL0BuZ3gtZm9ybWx5L21hdGVyaWFsL3RleHRhcmVhLyIsInNvdXJjZXMiOlsidGV4dGFyZWEudHlwZS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7O0FBQUEsT0FBTyxFQUFFLFNBQVMsRUFBVSxTQUFTLEVBQUUsTUFBTSxlQUFlLENBQUM7QUFDN0QsT0FBTyxFQUFFLFFBQVEsRUFBRSxNQUFNLHlCQUF5QixDQUFDO0FBQ25ELE9BQU8sRUFBRSxTQUFTLEVBQUUsTUFBTSxpQ0FBaUMsQ0FBQztBQUM1RCxPQUFPLEVBQUUsd0JBQXdCLEVBQUUsTUFBTSx5QkFBeUIsQ0FBQztBQTZCbkUsTUFBTSxPQUFPLG1CQUFvQixTQUFRLFNBQVM7SUEzQmxEOztRQTZCRSxtQkFBYyxHQUFHO1lBQ2YsZUFBZSxFQUFFO2dCQUNmLElBQUksRUFBRSxDQUFDO2dCQUNQLElBQUksRUFBRSxDQUFDO2FBQ1I7U0FDRixDQUFDO0lBQ0osQ0FBQzs7O1lBbkNBLFNBQVMsU0FBQztnQkFDVCxRQUFRLEVBQUUsMkJBQTJCO2dCQUNyQyxRQUFRLEVBQUU7Ozs7Ozs7Ozs7Ozs7Ozs7OztHQWtCVDtnQkFDRCxTQUFTLEVBQUU7b0JBQ1QsK0RBQStEO29CQUMvRCx1RkFBdUY7b0JBQ3ZGLEVBQUUsT0FBTyxFQUFFLHdCQUF3QixFQUFFLFdBQVcsRUFBRSxtQkFBbUIsRUFBRTtpQkFDeEU7YUFDRjs7OytCQUVFLFNBQVMsU0FBQyxRQUFRLEVBQUUsbUJBQU0sRUFBRSxNQUFNLEVBQUUsSUFBSSxFQUFFLEVBQUE7Ozs7SUFBM0MsK0NBQXlFOztJQUN6RSw2Q0FLRSIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IENvbXBvbmVudCwgT25Jbml0LCBWaWV3Q2hpbGQgfSBmcm9tICdAYW5ndWxhci9jb3JlJztcbmltcG9ydCB7IE1hdElucHV0IH0gZnJvbSAnQGFuZ3VsYXIvbWF0ZXJpYWwvaW5wdXQnO1xuaW1wb3J0IHsgRmllbGRUeXBlIH0gZnJvbSAnQG5neC1mb3JtbHkvbWF0ZXJpYWwvZm9ybS1maWVsZCc7XG5pbXBvcnQgeyBNQVRfSU5QVVRfVkFMVUVfQUNDRVNTT1IgfSBmcm9tICdAYW5ndWxhci9tYXRlcmlhbC9pbnB1dCc7XG5cbkBDb21wb25lbnQoe1xuICBzZWxlY3RvcjogJ2Zvcm1seS1maWVsZC1tYXQtdGV4dGFyZWEnLFxuICB0ZW1wbGF0ZTogYFxuICAgIDx0ZXh0YXJlYSBtYXRJbnB1dFxuICAgICAgW2lkXT1cImlkXCJcbiAgICAgIFtyZWFkb25seV09XCJ0by5yZWFkb25seVwiXG4gICAgICBbcmVxdWlyZWRdPVwidG8ucmVxdWlyZWRcIlxuICAgICAgW2Zvcm1Db250cm9sXT1cImZvcm1Db250cm9sXCJcbiAgICAgIFtlcnJvclN0YXRlTWF0Y2hlcl09XCJlcnJvclN0YXRlTWF0Y2hlclwiXG4gICAgICBbY29sc109XCJ0by5jb2xzXCJcbiAgICAgIFtyb3dzXT1cInRvLnJvd3NcIlxuICAgICAgW2Zvcm1seUF0dHJpYnV0ZXNdPVwiZmllbGRcIlxuICAgICAgW3BsYWNlaG9sZGVyXT1cInRvLnBsYWNlaG9sZGVyXCJcbiAgICAgIFt0YWJpbmRleF09XCJ0by50YWJpbmRleFwiXG4gICAgICBbY2RrVGV4dGFyZWFBdXRvc2l6ZV09XCJ0by5hdXRvc2l6ZVwiXG4gICAgICBbY2RrQXV0b3NpemVNaW5Sb3dzXT1cInRvLmF1dG9zaXplTWluUm93c1wiXG4gICAgICBbY2RrQXV0b3NpemVNYXhSb3dzXT1cInRvLmF1dG9zaXplTWF4Um93c1wiXG4gICAgICBbY2xhc3MuY2RrLXRleHRhcmVhLWF1dG9zaXplXT1cInRvLmF1dG9zaXplXCJcbiAgICAgID5cbiAgICA8L3RleHRhcmVhPlxuICBgLFxuICBwcm92aWRlcnM6IFtcbiAgICAvLyBmaXggZm9yIGh0dHBzOi8vZ2l0aHViLmNvbS9uZ3gtZm9ybWx5L25neC1mb3JtbHkvaXNzdWVzLzE2ODhcbiAgICAvLyByZWx5IG9uIGZvcm1Db250cm9sIHZhbHVlIGluc3RlYWQgb2YgZWxlbWVudFJlZiB3aGljaCByZXR1cm4gZW1wdHkgdmFsdWUgaW4gRmlyZWZveC5cbiAgICB7IHByb3ZpZGU6IE1BVF9JTlBVVF9WQUxVRV9BQ0NFU1NPUiwgdXNlRXhpc3Rpbmc6IEZvcm1seUZpZWxkVGV4dEFyZWEgfSxcbiAgXSxcbn0pXG5leHBvcnQgY2xhc3MgRm9ybWx5RmllbGRUZXh0QXJlYSBleHRlbmRzIEZpZWxkVHlwZSBpbXBsZW1lbnRzIE9uSW5pdCB7XG4gIEBWaWV3Q2hpbGQoTWF0SW5wdXQsIDxhbnk+IHsgc3RhdGljOiB0cnVlIH0pIGZvcm1GaWVsZENvbnRyb2whOiBNYXRJbnB1dDtcbiAgZGVmYXVsdE9wdGlvbnMgPSB7XG4gICAgdGVtcGxhdGVPcHRpb25zOiB7XG4gICAgICBjb2xzOiAxLFxuICAgICAgcm93czogMSxcbiAgICB9LFxuICB9O1xufVxuIl19
