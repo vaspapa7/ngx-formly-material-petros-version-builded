@@ -1,0 +1,30 @@
+import { __decorate, __extends, __metadata } from "tslib";
+import { Component, ChangeDetectionStrategy, ViewChild } from '@angular/core';
+import { FieldType } from '@ngx-formly/material/form-field';
+import { MatInput } from '@angular/material/input';
+var FormlyFieldNativeSelect = /** @class */ (function (_super) {
+    __extends(FormlyFieldNativeSelect, _super);
+    function FormlyFieldNativeSelect() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.defaultOptions = {
+            templateOptions: {
+                options: [],
+            },
+        };
+        return _this;
+    }
+    __decorate([
+        ViewChild(MatInput, { static: true }),
+        __metadata("design:type", MatInput)
+    ], FormlyFieldNativeSelect.prototype, "formFieldControl", void 0);
+    FormlyFieldNativeSelect = __decorate([
+        Component({
+            selector: 'formly-field-mat-native-select',
+            template: "\n    <select\n      matNativeControl\n      [id]=\"id\"\n      [readonly]=\"to.readonly\"\n      [required]=\"to.required\"\n      [errorStateMatcher]=\"errorStateMatcher\"\n      [formControl]=\"formControl\"\n      [formlyAttributes]=\"field\"\n    >\n      <option *ngIf=\"to.placeholder\" [ngValue]=\"undefined\">{{ to.placeholder }}</option>\n      <ng-container *ngIf=\"to.options | formlySelectOptions: field | async as opts\">\n        <ng-container *ngIf=\"to._flatOptions; else grouplist\">\n          <ng-container *ngFor=\"let opt of opts\">\n            <option [ngValue]=\"opt.value\" [disabled]=\"opt.disabled\">{{ opt.label }}</option>\n          </ng-container>\n        </ng-container>\n\n        <ng-template #grouplist>\n          <ng-container *ngFor=\"let opt of opts\">\n            <option *ngIf=\"!opt.group; else optgroup\" [ngValue]=\"opt.value\" [disabled]=\"opt.disabled\">{{\n              opt.label\n            }}</option>\n            <ng-template #optgroup>\n              <optgroup [label]=\"opt.label\">\n                <option *ngFor=\"let child of opt.group\" [ngValue]=\"child.value\" [disabled]=\"child.disabled\">\n                  {{ child.label }}\n                </option>\n              </optgroup>\n            </ng-template>\n          </ng-container>\n        </ng-template>\n      </ng-container>\n    </select>\n  ",
+            changeDetection: ChangeDetectionStrategy.OnPush
+        })
+    ], FormlyFieldNativeSelect);
+    return FormlyFieldNativeSelect;
+}(FieldType));
+export { FormlyFieldNativeSelect };
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibmF0aXZlLXNlbGVjdC50eXBlLmpzIiwic291cmNlUm9vdCI6Im5nOi8vQG5neC1mb3JtbHkvbWF0ZXJpYWwvbmF0aXZlLXNlbGVjdC8iLCJzb3VyY2VzIjpbIm5hdGl2ZS1zZWxlY3QudHlwZS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO0FBQUEsT0FBTyxFQUFFLFNBQVMsRUFBRSx1QkFBdUIsRUFBRSxTQUFTLEVBQUUsTUFBTSxlQUFlLENBQUM7QUFDOUUsT0FBTyxFQUFFLFNBQVMsRUFBRSxNQUFNLGlDQUFpQyxDQUFDO0FBQzVELE9BQU8sRUFBRSxRQUFRLEVBQUUsTUFBTSx5QkFBeUIsQ0FBQztBQXlDbkQ7SUFBNkMsMkNBQVM7SUFBdEQ7UUFBQSxxRUFPQztRQUxDLG9CQUFjLEdBQUc7WUFDZixlQUFlLEVBQUU7Z0JBQ2YsT0FBTyxFQUFFLEVBQUU7YUFDWjtTQUNGLENBQUM7O0lBQ0osQ0FBQztJQU53QztRQUF0QyxTQUFTLENBQUMsUUFBUSxFQUFFLEVBQUUsTUFBTSxFQUFFLElBQUksRUFBRSxDQUFDO2tDQUFvQixRQUFRO3FFQUFDO0lBRHhELHVCQUF1QjtRQXZDbkMsU0FBUyxDQUFDO1lBQ1QsUUFBUSxFQUFFLGdDQUFnQztZQUMxQyxRQUFRLEVBQUUsMDFDQWtDVDtZQUNELGVBQWUsRUFBRSx1QkFBdUIsQ0FBQyxNQUFNO1NBQ2hELENBQUM7T0FDVyx1QkFBdUIsQ0FPbkM7SUFBRCw4QkFBQztDQUFBLEFBUEQsQ0FBNkMsU0FBUyxHQU9yRDtTQVBZLHVCQUF1QiIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IENvbXBvbmVudCwgQ2hhbmdlRGV0ZWN0aW9uU3RyYXRlZ3ksIFZpZXdDaGlsZCB9IGZyb20gJ0Bhbmd1bGFyL2NvcmUnO1xuaW1wb3J0IHsgRmllbGRUeXBlIH0gZnJvbSAnQG5neC1mb3JtbHkvbWF0ZXJpYWwvZm9ybS1maWVsZCc7XG5pbXBvcnQgeyBNYXRJbnB1dCB9IGZyb20gJ0Bhbmd1bGFyL21hdGVyaWFsL2lucHV0JztcblxuQENvbXBvbmVudCh7XG4gIHNlbGVjdG9yOiAnZm9ybWx5LWZpZWxkLW1hdC1uYXRpdmUtc2VsZWN0JyxcbiAgdGVtcGxhdGU6IGBcbiAgICA8c2VsZWN0XG4gICAgICBtYXROYXRpdmVDb250cm9sXG4gICAgICBbaWRdPVwiaWRcIlxuICAgICAgW3JlYWRvbmx5XT1cInRvLnJlYWRvbmx5XCJcbiAgICAgIFtyZXF1aXJlZF09XCJ0by5yZXF1aXJlZFwiXG4gICAgICBbZXJyb3JTdGF0ZU1hdGNoZXJdPVwiZXJyb3JTdGF0ZU1hdGNoZXJcIlxuICAgICAgW2Zvcm1Db250cm9sXT1cImZvcm1Db250cm9sXCJcbiAgICAgIFtmb3JtbHlBdHRyaWJ1dGVzXT1cImZpZWxkXCJcbiAgICA+XG4gICAgICA8b3B0aW9uICpuZ0lmPVwidG8ucGxhY2Vob2xkZXJcIiBbbmdWYWx1ZV09XCJ1bmRlZmluZWRcIj57eyB0by5wbGFjZWhvbGRlciB9fTwvb3B0aW9uPlxuICAgICAgPG5nLWNvbnRhaW5lciAqbmdJZj1cInRvLm9wdGlvbnMgfCBmb3JtbHlTZWxlY3RPcHRpb25zOiBmaWVsZCB8IGFzeW5jIGFzIG9wdHNcIj5cbiAgICAgICAgPG5nLWNvbnRhaW5lciAqbmdJZj1cInRvLl9mbGF0T3B0aW9uczsgZWxzZSBncm91cGxpc3RcIj5cbiAgICAgICAgICA8bmctY29udGFpbmVyICpuZ0Zvcj1cImxldCBvcHQgb2Ygb3B0c1wiPlxuICAgICAgICAgICAgPG9wdGlvbiBbbmdWYWx1ZV09XCJvcHQudmFsdWVcIiBbZGlzYWJsZWRdPVwib3B0LmRpc2FibGVkXCI+e3sgb3B0LmxhYmVsIH19PC9vcHRpb24+XG4gICAgICAgICAgPC9uZy1jb250YWluZXI+XG4gICAgICAgIDwvbmctY29udGFpbmVyPlxuXG4gICAgICAgIDxuZy10ZW1wbGF0ZSAjZ3JvdXBsaXN0PlxuICAgICAgICAgIDxuZy1jb250YWluZXIgKm5nRm9yPVwibGV0IG9wdCBvZiBvcHRzXCI+XG4gICAgICAgICAgICA8b3B0aW9uICpuZ0lmPVwiIW9wdC5ncm91cDsgZWxzZSBvcHRncm91cFwiIFtuZ1ZhbHVlXT1cIm9wdC52YWx1ZVwiIFtkaXNhYmxlZF09XCJvcHQuZGlzYWJsZWRcIj57e1xuICAgICAgICAgICAgICBvcHQubGFiZWxcbiAgICAgICAgICAgIH19PC9vcHRpb24+XG4gICAgICAgICAgICA8bmctdGVtcGxhdGUgI29wdGdyb3VwPlxuICAgICAgICAgICAgICA8b3B0Z3JvdXAgW2xhYmVsXT1cIm9wdC5sYWJlbFwiPlxuICAgICAgICAgICAgICAgIDxvcHRpb24gKm5nRm9yPVwibGV0IGNoaWxkIG9mIG9wdC5ncm91cFwiIFtuZ1ZhbHVlXT1cImNoaWxkLnZhbHVlXCIgW2Rpc2FibGVkXT1cImNoaWxkLmRpc2FibGVkXCI+XG4gICAgICAgICAgICAgICAgICB7eyBjaGlsZC5sYWJlbCB9fVxuICAgICAgICAgICAgICAgIDwvb3B0aW9uPlxuICAgICAgICAgICAgICA8L29wdGdyb3VwPlxuICAgICAgICAgICAgPC9uZy10ZW1wbGF0ZT5cbiAgICAgICAgICA8L25nLWNvbnRhaW5lcj5cbiAgICAgICAgPC9uZy10ZW1wbGF0ZT5cbiAgICAgIDwvbmctY29udGFpbmVyPlxuICAgIDwvc2VsZWN0PlxuICBgLFxuICBjaGFuZ2VEZXRlY3Rpb246IENoYW5nZURldGVjdGlvblN0cmF0ZWd5Lk9uUHVzaCxcbn0pXG5leHBvcnQgY2xhc3MgRm9ybWx5RmllbGROYXRpdmVTZWxlY3QgZXh0ZW5kcyBGaWVsZFR5cGUge1xuICBAVmlld0NoaWxkKE1hdElucHV0LCB7IHN0YXRpYzogdHJ1ZSB9KSBmb3JtRmllbGRDb250cm9sITogTWF0SW5wdXQ7XG4gIGRlZmF1bHRPcHRpb25zID0ge1xuICAgIHRlbXBsYXRlT3B0aW9uczoge1xuICAgICAgb3B0aW9uczogW10sXG4gICAgfSxcbiAgfTtcbn1cbiJdfQ==
